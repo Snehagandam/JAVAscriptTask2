@@ -1,0 +1,159 @@
+  1. Print odd numbers in an array
+ ANS ->  
+      var arr=[1,2,3,4,5,6,7,8,9,10]
+   
+     let oddnumber=function(){
+    for(i=0;i<arr.length;i++){
+       
+      if(arr[i]%2!==0)
+      {
+          console.log(arr[i])
+      }
+  }
+   
+  }
+  
+  oddnumber();
+        
+  2.Covert all the strings to title caps in a string array.
+  ANS ->
+       var arr="Iam,a,little,tea,pot";
+      function titleCase(str) {
+       return str
+        .split(',')
+        .map((word) => word[0].toUpperCase() + word.slice(1).toLowerCase())
+        .join(' ');
+      }
+    console.log(titleCase(arr)); // I'm A Little tea Pot
+
+
+  3.Sum of all numbers in an array.
+ ANS ->
+       var arr=[1,2,3,4,5,6,7,8,9,10]
+   
+      var sum=0;
+     let sumofnumers=function() {  
+     for(i=0;i<arr.length;i++)
+     {
+         sum=sum+arr[i];
+         
+     }
+     
+     console.log(sum)
+   }
+  
+    sumofnumers();
+
+  4.Return all the prime numbers in an array.
+ ANS ->
+    
+  var numArray = [1,2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+    numArray = numArray.filter((number) => 
+    {
+    for (var i = 2; i <= Math.sqrt(number); i++)   
+     {
+        if (number % i === 0) return false;
+    }
+     return true;
+   });
+
+   console.log(numArray);
+
+  5.Return all the palindromes in an array
+  ANS -> 
+  
+  6.Return median of two sorted arrays of same size
+  ANS ->
+        
+  function getMedian(ar1, ar2, n)
+{
+    var i = 0; 
+    var j = 0; 
+    var count;
+    var m1 = -1, m2 = -1;
+ 
+   
+    for (count = 0; count <= n; count++)
+    {
+        
+        if (i == n)
+        {
+            m1 = m2;
+            m2 = ar2[0];
+            break;
+        }
+ 
+     
+        else if (j == n)
+        {
+            m1 = m2;
+            m2 = ar1[0];
+            break;
+        }
+        
+        if (ar1[i] <= ar2[j])
+        {
+            m1 = m2; 
+            m2 = ar1[i];
+            i++;
+        }
+        else
+        {
+            m1 = m2;
+            m2 = ar2[j];
+            j++;
+        }
+    }
+ 
+    return (m1 + m2)/2;
+}
+ 
+
+var ar1 = [1, 12, 11, 26, 38];
+var ar2 = [2, 13, 18, 30, 45];
+var n1 = ar1.length;
+var n2 = ar2.length;
+if (n1 == n2)
+    console.log("Median is "+ getMedian(ar1, ar2, n1));
+else
+    console.log("Doesn't work for arrays of unequal size");
+ 
+
+  
+  7.Remove duplicates from an array
+  ANS -> 
+    var arr=[1,2,4,4,5,5,6]
+   var removeduplicate =function (arr1){
+   var j=0;
+   
+    for(var i=0;i<arr1.length;i++)
+    {
+         if(arr1[i]!=arr1[i+1])
+         {
+             arr1[j++] = arr1[i]
+         }
+    }
+     
+     arr1[j+1] = arr1[arr.length-1]
+     
+    for(var k=0; k<j;k++)
+    {
+        console.log(arr1[k])
+    }
+  }
+  
+    removeduplicate(arr);
+
+  8.Rotate an array by k times and return the rotated array.
+  ANS -> 
+        function rotate(arr, k) {
+    for (var i = 0; i < k+1; i++) {
+    arr.push(arr.shift());
+    }
+     return arr;
+    }
+
+    console.log(rotate([1, 2, 7, 4, 5, 6, 7], 7)); 
+    
+
